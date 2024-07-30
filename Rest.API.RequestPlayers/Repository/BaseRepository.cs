@@ -25,26 +25,9 @@ namespace Rest.API.RequestPlayers.Repository
                     $"Password={Environment.GetEnvironmentVariable("DB_PASSWORD")};" +
                     $"Port={Environment.GetEnvironmentVariable("DB_PORT")};" +
                     $"SslMode={Environment.GetEnvironmentVariable("DB_SSHMODE")};";
-            }
-
-            TestConection();
-            
+            }            
         }
 
-        public async Task TestConection()
-        {
-            using var connection = new MySqlConnection(ConnectionString);
-
-            try
-            {
-                await connection.OpenAsync();
-                Console.WriteLine("Conexão bem-sucedida!");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erro ao abrir a conexão: {ex.Message}");
-            }
-        }
     }
 }
 
