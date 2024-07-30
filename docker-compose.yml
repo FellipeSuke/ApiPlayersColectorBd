@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: app_colector_players:1.0.0.5
+    environment:
+      - API_URL=http://201.14.75.202:8212/v1/api/players
+      - USERNAME=admin
+      - PASSWORD=unreal
+      - DB_SERVER=201.14.75.202
+      - DB_DATABASE=db-palworld-pvp-insiderhub
+      - DB_USER=PalAdm
+      - DB_PASSWORD=sukelord
+      - DB_PORT=3306
+      - DB_SSHMODE=None
